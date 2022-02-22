@@ -24,7 +24,7 @@ function FavCard(props) {
                     <Card.Title>{props.elem.strdrink}</Card.Title>
                     <hr></hr>
                     <Card.Text>{(props.elem.comment)?props.elem.comment:<span style={{color:"lightgray"}}>no comment</span>} </Card.Text>
-                    <Button variant="primary" onClick={addCommentHandler}>Add Comment</Button>
+                    <Button variant="primary" onClick={addCommentHandler}>{(props.elem.comment) ? "update comment" : "Add Comment"}</Button>
                     <Button variant="primary" onClick={()=>{props.removeHandler(props.elem.id)}}>Remove</Button>
                 </Card.Body>
             </Card>
