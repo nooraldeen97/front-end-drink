@@ -7,7 +7,7 @@ function Header() {
         <>
             <Navbar bg="light" variant="light" id="header">
                 <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="#home">DRINK STORE</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/fav">Favorite</Nav.Link>

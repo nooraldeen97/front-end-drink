@@ -1,5 +1,4 @@
-import { Button, Card } from "react-bootstrap";
-import { FaHeart } from "react-icons/fa";
+import { Card } from "react-bootstrap";
 import React, { useState } from 'react';
 import "./button.css";
 import axios from 'axios';
