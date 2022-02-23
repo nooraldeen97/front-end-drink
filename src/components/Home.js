@@ -6,6 +6,7 @@ import "./Home.css";
 function Home() {
 
     const [arr, setArr] = useState([]);
+    const [filteredArr, setFilteredArr] = useState([]);
     const searchRef = useRef(null);
 
     useEffect(getData, []);
@@ -21,7 +22,7 @@ function Home() {
         let newArr = arr.filter((elem => {
             return elem.strDrink.includes(searchRef.current.value);
         }))
-        setArr(newArr);
+        setFilteredArr(newArr);
 
 
     }
@@ -36,7 +37,9 @@ function Home() {
             </div>
             <div id='divCard'>
                 {
-                    arr.map(elem => {
+                   filteredArr.length? filteredArr.map(elem => {
+                        return <HomeCard elem={elem} />
+                    }) :  arr.map(elem => {
                         return <HomeCard elem={elem} />
                     })
                 }
