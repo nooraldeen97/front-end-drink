@@ -5,7 +5,7 @@ function Header() {
 
     return (
         <>
-            <Navbar bg="light" variant="light" id="header" expand="sm">
+            <Navbar bg="light" variant="light" id="header" expand="md">
                 <Container>
                     <Navbar.Brand href="#home" >
                         <img src="https://cdn3.iconfinder.com/data/icons/food-drink-33/514/Food__Drink-12-512.png" width="40px" height="40px" alt="dss"/>
