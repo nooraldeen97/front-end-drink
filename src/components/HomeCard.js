@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Card , Col } from "react-bootstrap";
 import React, { useState } from 'react';
 import "./button.css";
 import axios from 'axios';
@@ -22,7 +22,7 @@ function HomeCard(props) {
     }
 
     return (
-        <>
+        <Col className = "d-flex align-items-center justify-content-center">
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={props.elem.strDrinkThumb} />
                 <Card.Body>
@@ -30,7 +30,7 @@ function HomeCard(props) {
                     <p  id="btn" onClick={()=>{if(!flag)addToFavHandler(props.elem)}} >{(flag)?<span>❤️ Added</span>:<span>🖤 Add to favorite</span>} </p>
                 </Card.Body>
             </Card>
-        </>
+        </Col>
     );
 }
 

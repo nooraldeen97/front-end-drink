@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import HomeCard from './HomeCard';
 import "./Home.css";
+import { Container } from 'react-bootstrap';
+import { Col,Row} from "react-bootstrap";
 
 function Home() {
 
@@ -10,6 +12,7 @@ function Home() {
     const searchRef = useRef(null);
 
     useEffect(getData, []);
+    const styleCardDiv = "col-md-5 col-lg-3 mx-auto g-2"
 
     function getData() {
         axios.get("https://drink-store.herokuapp.com/")
@@ -35,17 +38,26 @@ function Home() {
                 <input type="text" ref={searchRef} placeholder='search about drink' />
                 <button onClick={searchHandler}>search</button>
             </div>
-            <div id='divCard'>
+           <Container fluids>
+
+            <Row>
+
+            {/* <div id='divCard'> */}
                 {
-                   filteredArr.length? filteredArr.map(elem => {
-                        return <HomeCard elem={elem} />
+                    filteredArr.length? filteredArr.map(elem => {
+                        return <Row  className={styleCardDiv}><HomeCard elem={elem} /></Row>
+                        
                     }) :  arr.map(elem => {
-                        return <HomeCard elem={elem} />
+                        return <Row  className={styleCardDiv}><HomeCard elem={elem} /></Row>
                     })
+                    
                 }
 
-            </div>
+                </Row>
+                </Container>
+                
 
+            {/* </div> */}
         </>
     );
 }
