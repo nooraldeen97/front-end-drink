@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import FavCard from './FavCard';
 import "./Favorite.css";
+import { Container,Row,Col } from 'react-bootstrap';
 
 function Favorite() {
 
 
     const [favData, setFavData] = useState([]);
+    // const styleCardDiv = " col-md-4 col-lg-3 mx-auto g-2"
+
 
     function getData() {
         axios.get("https://drink-store.herokuapp.com/getDrinks")
@@ -32,15 +35,23 @@ function Favorite() {
     useEffect(getData, []);
 
     return (
-        <div id='favCardsCont'>
+
+        // <div id='favCardsCont'>
+        <Container>
+            <Row>
+
             {
                 favData.map((elem) => {
-                    return <FavCard elem={elem}
-                        removeHandler={removeHandler}
-                        addCommentHandler={addCommentHandler} />
+                    return<FavCard elem={elem}
+                    removeHandler={removeHandler}
+                    addCommentHandler={addCommentHandler} />
+                  
+                    
                 })
             }
-        </div>
+            </Row>
+        </Container>
+        // </div>
     );
 }
 

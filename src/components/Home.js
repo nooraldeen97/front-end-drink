@@ -12,7 +12,7 @@ function Home() {
     const searchRef = useRef(null);
 
     useEffect(getData, []);
-    const styleCardDiv = "col-md-5 col-lg-3 mx-auto g-2"
+    const styleCardDiv = " col-md-4 col-lg-3 mx-auto g-2"
 
     function getData() {
         axios.get("https://drink-store.herokuapp.com/")

@@ -1,4 +1,4 @@
-import { Button, Card } from "react-bootstrap";
+import { Button, Card,Col } from "react-bootstrap";
 import "./Favorite.css";
 import ShowModal from "./ShowModal";
 import React, { useState } from 'react';
@@ -18,6 +18,7 @@ function FavCard(props) {
 
     return (
         <>
+        <Col className = "d-flex align-items-center justify-content-center col-md-4 col-lg-3 mx-auto g-2">
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={props.elem.strdrinkthumb} />
                 <Card.Body>
@@ -28,6 +29,7 @@ function FavCard(props) {
                     <Button variant="primary" onClick={()=>{props.removeHandler(props.elem.id)}}>Remove</Button>
                 </Card.Body>
             </Card>
+        </Col>
             <ShowModal elem={props.elem} handleClose={handleClose} addCommentHandler={props.addCommentHandler}show={show}/>
         </>
     );
